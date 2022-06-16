@@ -1,6 +1,7 @@
 from solcx import install_solc
 from solcx import compile_standard
 import json
+from web3 import Web3
 
 install_solc("0.6.0")
 
@@ -38,3 +39,8 @@ bytecode = complied_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["evm"
 abi = complied_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]
 
 # print(abi)
+
+# Connecting to Ganache
+w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
+
+chain_id = 5777

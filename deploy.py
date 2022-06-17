@@ -44,3 +44,5 @@ abi = complied_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]
 w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
 
 chain_id = 5777
+my_address = "0x3990a4b698F800C1199772cc5F217246510217bd"
+my_private_key = "fb1abf9b187e64caeb43964f172bbd3b83dfb09ae8bbb977a8e2ccd933a84bcf"

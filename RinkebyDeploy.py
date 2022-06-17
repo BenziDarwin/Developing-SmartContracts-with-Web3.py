@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 # import subprocess
 
 # subprocess.call(r"./env.bat")
+
 load_dotenv()
 
 install_solc("0.6.0")
@@ -48,11 +49,13 @@ abi = complied_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]
 # print(abi)
 
 # Connecting to Ganache
-w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
+w3 = Web3(
+    Web3.HTTPProvider("https://rinkeby.infura.io/v3/bf185d342e03440e8d62cf408e330889")
+)
 
-chain_id = 1337
-my_address = "0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1"
-my_private_key = os.getenv("PRIVATE_KEY")
+chain_id = 4
+my_address = "0x4d01dc10FfAa9c9A08714a199eB831B68ecC9f5B"
+my_private_key = os.getenv("RINKEBY_PRIVATE_KEY")
 
 SimpleStorage = w3.eth.contract(abi=abi, bytecode=bytecode)
 # print(simpleStorage)
